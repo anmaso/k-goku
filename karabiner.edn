@@ -4,6 +4,7 @@
              :tmux-winmove-mode {:key :q :condi :Terminals}
              :period-mode {:key :period}
              :comma-mode {:key :comma}
+             :quote-mode {:key :quote}
              :space-mode {:key :spacebar :condi :macbook-internal}}
 
  :main [{:des "Hyper Mode - Control"
@@ -51,6 +52,7 @@
                  [:m :delete_or_backspace]
                  [:comma :delete_forward]
                  [:period :!Odelete_forward]
+                 [:spacebar :!Odelete_or_backspace]
                  [:!Cn :!Cdelete_or_backspace]
                  [:!Cm :!Cdelete_or_backspace]
                  [:!Ccomma :!Cdelete_forward]
@@ -59,6 +61,7 @@
         {:des "Hyper Mode - Misc"
          :rules [:hyper-mode
                  [:escape :caps_lock]
+                 [:semicolon :return_or_enter]
                  [:grave_accent_and_tilde :!CS5]]}
 
         {:des "Space Mode (Change Mac keyboard to Filco Minila layout with spacebar FN)"
@@ -123,6 +126,16 @@
                  [:w :equal_sign]
                  [:e :!Sopen_bracket]
                  [:r :!Sclose_bracket]]}
+
+        {:des "Quote Mode [,] as Trigger Key"
+         :rules [:quote-mode
+                 [:a [:!Oe :a ]]
+                 [:e [:!Oe :e ]]
+                 [:i [:!Oe :i ]]
+                 [:o [:!Oe :o ]]
+                 [:u [:!Oe :u ]]
+                 ]
+        }
 
         {:des "Launcher Mode [L] as Trigger Key"
          :rules [:launch-mode
